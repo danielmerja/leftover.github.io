@@ -1,22 +1,21 @@
 function copyWallet() {
     const walletAddress = document.getElementById('wallet-address').innerText;
     const feedbackElement = document.getElementById('copy-feedback');
+    const buttonText = document.getElementById('button-text');
     
     navigator.clipboard.writeText(walletAddress)
         .then(() => {
-            // Show feedback
-            feedbackElement.classList.remove('opacity-0');
-            feedbackElement.classList.add('opacity-100');
-            
-            // Hide feedback after 2 seconds
+            buttonText.textContent = 'Copied!';
             setTimeout(() => {
-                feedbackElement.classList.remove('opacity-100');
-                feedbackElement.classList.add('opacity-0');
+                buttonText.textContent = 'Copy Address';
             }, 2000);
         })
         .catch(err => {
             console.error('Failed to copy wallet address:', err);
-            alert('Failed to copy wallet address. Please try again.');
+            buttonText.textContent = 'Failed to copy';
+            setTimeout(() => {
+                buttonText.textContent = 'Copy Address';
+            }, 2000);
         });
 }
 
