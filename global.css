@@ -92,3 +92,21 @@ footer {
     border-top: 1px solid #333;
     text-align: center;
 }
+
+.accredited-check {
+    text-align: left;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.accredited-check label {
+    margin-left: 10px;
+    color: var(--text);
+}
+
+.accredited-check input[type="checkbox"] {
+    transform: scale(1.2);
+    cursor: pointer;
+}

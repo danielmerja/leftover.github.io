@@ -27,4 +27,12 @@ document.addEventListener('DOMContentLoaded', () => {
         section.style.transition = 'all 0.6s ease-out';
         observer.observe(section);
     });
+
+    // Add accredited investor checkbox handler
+    const accreditedCheckbox = document.getElementById('accredited');
+    const walletSection = document.getElementById('wallet-section');
+    
+    accreditedCheckbox.addEventListener('change', function() {
+        walletSection.style.display = this.checked ? 'block' : 'none';
+    });
 });
