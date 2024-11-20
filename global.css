@@ -117,6 +117,26 @@ footer {
     font-size: 0.9em;
 }
 
+.accredited-criteria strong {
+    color: var(--accent);
+    display: block;
+    margin: 15px 0 5px 0;
+}
+
+.accredited-criteria ul ul {
+    margin: 5px 0 15px 20px;
+    list-style-type: circle;
+}
+
+.accredited-criteria > li {
+    margin-bottom: 20px;
+}
+
+.accredited-criteria ul ul li {
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
 .sec-link {
     display: inline-block;
     color: var(--accent);
