@@ -4,79 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leftover VC - Reclaiming Failed Startup Capital</title>
-    <link rel="stylesheet" href="global.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#00ff9d',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <h1>Leftover VC</h1>
-        <p class="tagline">Turning Silicon Valley's leftovers into opportunities</p>
+<body class="bg-black text-white min-h-screen">
+    <header class="py-20 text-center">
+        <h1 class="text-5xl font-bold text-accent mb-4">Leftover VC</h1>
+        <p class="text-gray-400 text-xl">Turning Silicon Valley's leftovers into opportunities</p>
     </header>
 
-    <main>
-        <section id="thesis">
-            <h2>The Thesis</h2>
-            <p>We collect and reinvest leftover capital from:</p>
-            <ul>
+    <main class="max-w-4xl mx-auto px-4">
+        <section id="thesis" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold mb-6 text-accent">The Thesis</h2>
+            <p class="text-gray-300 mb-4">We collect and reinvest leftover capital from:</p>
+            <ul class="space-y-2 text-gray-400 list-disc pl-6">
                 <li>Failed startup write-offs</li>
                 <li>Legal settlement recoveries</li>
                 <li>Returned funds from fraud cases</li>
             </ul>
         </section>
 
-        <section id="process">
-            <h2>Investment Process</h2>
-            <div class="accredited-check">
-                <input type="checkbox" id="accredited" required>
-                <label for="accredited">
-                    I hereby certify that I qualify as an Accredited Investor under SEC guidelines by meeting one or more of the following qualifications:
-                </label>
-                <ul class="accredited-criteria">
-                    <li><strong>Financial Criteria:</strong>
-                        <ul>
-                            <li>Individual or joint net worth exceeding $1 million (excluding primary residence)</li>
-                            <li>Income exceeding $200,000 individually or $300,000 jointly in the past two years, with reasonable expectation of maintaining in current year</li>
-                        </ul>
-                    </li>
-                    <li><strong>Professional Qualifications:</strong>
-                        <ul>
-                            <li>Hold in good standing: Series 7, Series 65, or Series 82 licenses</li>
-                            <li>Director, executive officer, or general partner of the issuing company</li>
-                            <li>"Knowledgeable employee" of a private fund (for fund investments)</li>
-                            <li>Family client of a qualifying family office</li>
-                        </ul>
-                    </li>
-                    <li><strong>Entity Qualification:</strong>
-                        <ul>
-                            <li>Investment entities with over $5 million in assets</li>
-                            <li>Entity where all equity owners are accredited investors</li>
-                            <li>SEC/State-registered investment advisers or broker-dealers</li>
-                        </ul>
-                    </li>
-                </ul>
-                <a href="https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-investors" 
-                   target="_blank" 
-                   class="sec-link">Official SEC Accredited Investor Guidelines →</a>
-            </div>
-            <div class="wallet-info" id="wallet-section" style="display: none;">
-                <h3>Send Bitcoin to:</h3>
-                <div id="wallet-address" class="crypto-wallet">
-                    3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp
+        <section id="process" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold mb-6 text-accent">Investment Process</h2>
+            <div class="bg-gray-800 rounded-lg p-6 mb-8">
+                <div class="flex items-start space-x-4 mb-6">
+                    <input type="checkbox" id="accredited" class="mt-1.5 h-5 w-5 rounded border-gray-600 text-accent focus:ring-accent" required>
+                    <label for="accredited" class="text-gray-300">
+                        I hereby certify that I qualify as an Accredited Investor under SEC guidelines by meeting one or more of the 
+                        <a href="https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-investors" 
+                           target="_blank" 
+                           class="text-accent hover:underline">
+                           required qualifications →
+                        </a>
+                    </label>
                 </div>
-                <button onclick="copyWallet()">Copy Address</button>
+            </div>
+            
+            <div id="wallet-section" class="hidden">
+                <h3 class="text-2xl font-bold mb-4 text-center">Send Bitcoin to:</h3>
+                <div class="bg-gray-800 p-6 rounded-lg mb-4">
+                    <code id="wallet-address" class="text-gray-300 font-mono block text-center select-all">3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp</code>
+                </div>
+                <div class="text-center">
+                    <button onclick="copyWallet()" 
+                            class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors inline-flex items-center gap-2">
+                        <span>Copy Address</span>
+                        <span id="copy-feedback" class="text-sm opacity-0 transition-opacity">✓ Copied!</span>
+                    </button>
+                </div>
             </div>
         </section>
 
-        <section id="team">
-            <h2>Our Team</h2>
-            <div class="team-member">
-                <h3>Daniel Merja</h3>
-                <p class="title">General Partner</p>
+        <section id="team" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
+            <h2 class="text-3xl font-bold mb-6 text-accent">Our Team</h2>
+            <div class="bg-gray-800 rounded-lg p-6 text-center">
+                <h3 class="text-2xl font-bold text-accent mb-2">Daniel Merja</h3>
+                <p class="text-gray-400">General Partner</p>
             </div>
         </section>
     </main>
     
-    <footer>
-        <p class="disclaimer">Legal Disclaimer: Investment involves risk. Due diligence required.</p>
+    <footer class="py-8 border-t border-gray-800 text-center">
+        <p class="text-gray-500 text-sm">Legal Disclaimer: Investment involves risk. Due diligence required.</p>
     </footer>
     <script src="script.js"></script>
 </body>
