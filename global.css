@@ -110,3 +110,21 @@ footer {
     transform: scale(1.2);
     cursor: pointer;
 }
+
+.accredited-criteria {
+    margin: 15px 0 15px 25px;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.sec-link {
+    display: inline-block;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.sec-link:hover {
+    text-decoration: underline;
+}
