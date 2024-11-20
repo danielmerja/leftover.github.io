@@ -1,22 +1,19 @@
-function copyWallet() {
-    const walletAddress = document.getElementById('wallet-address').innerText;
-    const feedbackElement = document.getElementById('copy-feedback');
-    const buttonText = document.getElementById('button-text');
+document.getElementById('accredited').addEventListener('change', function() {
+    document.getElementById('wallet-section').classList.toggle('hidden', !this.checked);
+});
+
+function copyWallet(event) {
+    const button = event.target.closest('button');
+    const address = button.closest('.flex').querySelector('.wallet-address').textContent;
     
-    navigator.clipboard.writeText(walletAddress)
-        .then(() => {
-            buttonText.textContent = 'Copied!';
-            setTimeout(() => {
-                buttonText.textContent = 'Copy Address';
-            }, 2000);
-        })
-        .catch(err => {
-            console.error('Failed to copy wallet address:', err);
-            buttonText.textContent = 'Failed to copy';
-            setTimeout(() => {
-                buttonText.textContent = 'Copy Address';
-            }, 2000);
-        });
+    navigator.clipboard.writeText(address).then(() => {
+        const buttonText = button.querySelector('.button-text');
+        const originalText = buttonText.textContent;
+        buttonText.textContent = 'Copied!';
+        setTimeout(() => {
+            buttonText.textContent = originalText;
+        }, 2000);
+    });
 }
 
 // Add fade-in animation on scroll

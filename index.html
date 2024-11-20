@@ -51,15 +51,48 @@
             </div>
             
             <div id="wallet-section" class="hidden">
-                <h3 class="text-2xl font-bold mb-4 text-center">Send Bitcoin to:</h3>
-                <div class="bg-gray-800 p-6 rounded-lg mb-4">
-                    <code id="wallet-address" class="text-gray-300 font-mono block text-center select-all">3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp</code>
-                </div>
-                <div class="text-center">
-                    <button onclick="copyWallet()" 
-                            class="bg-accent text-black px-6 py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                        <span id="button-text">Copy Address</span>
-                    </button>
+                <h3 class="text-2xl font-bold mb-4 text-center">Send funds to:</h3>
+                <div class="space-y-4">
+                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-400 mb-2">Bitcoin (BTC)</p>
+                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp</code>
+                        </div>
+                        <button onclick="copyWallet(event)" 
+                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-400 mb-2">Solana (SOL)</p>
+                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">3ZR8LgNMkDCVyPANxYTKZKrts4SW7wiN66fmJi9gGtj9</code>
+                        </div>
+                        <button onclick="copyWallet(event)" 
+                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-400 mb-2">USDC (ERC-20)</p>
+                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">0x5EeD7EC4c1bC333be5495772Cab8B7ae2a2c8940</code>
+                        </div>
+                        <button onclick="copyWallet(event)" 
+                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
+                        <div class="flex-1">
+                            <p class="text-sm text-gray-400 mb-2">Ethereum (ETH)</p>
+                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">0xAA60809C302D79a8D62A52FAaa087875ad06a01E</code>
+                        </div>
+                        <button onclick="copyWallet(event)" 
+                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
