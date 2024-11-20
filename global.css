@@ -61,3 +61,34 @@ button {
     font-size: 0.8em;
     color: #888;
 }
+
+.disclaimer {
+    font-size: 0.8em;
+    color: #888;
+    margin: 0;
+}
+
+.team-member {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.team-member h3 {
+    color: var(--accent);
+    margin: 0 0 10px 0;
+}
+
+.team-member .title {
+    color: #888;
+    font-style: italic;
+}
+
+footer {
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid #333;
+    text-align: center;
+}
