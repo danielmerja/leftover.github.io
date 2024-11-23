@@ -18,6 +18,24 @@ function copyWallet(event) {
 
 // Add fade-in animation on scroll
 document.addEventListener('DOMContentLoaded', () => {
+    // Animate funding counter
+    const counter = document.getElementById('funding-counter');
+    const targetAmount = 34.20;
+    const duration = 2000; // 2 seconds
+    const fps = 30;
+    const steps = duration / (1000 / fps);
+    const increment = targetAmount / steps;
+    let currentAmount = 0;
+
+    const timer = setInterval(() => {
+        currentAmount += increment;
+        if (currentAmount >= targetAmount) {
+            currentAmount = targetAmount;
+            clearInterval(timer);
+        }
+        counter.textContent = currentAmount.toFixed(2);
+    }, 1000 / fps);
+
     const sections = document.querySelectorAll('section');
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
