@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (prefersReducedMotion) {
-            counter.textContent = formatCurrency(34.20);
+            counter.textContent = formatCurrency(69.420);
             return;
         }
 
-        const targetAmount = 34.20;
+        const targetAmount = 69.420;
         const duration = 2000;
         const fps = 30;
         const steps = duration / (1000 / fps);
