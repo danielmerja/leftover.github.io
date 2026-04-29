@@ -3,151 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- HTML Meta Tags -->
+
     <title>Leftover VC - Reclaiming Failed Startup Capital</title>
-    <meta name="description" content="Turning Silicon Valley's leftovers into opportunities. We collect and reinvest leftover capital from failed startups, legal settlements, and fraud recoveries." />
+    <meta name="description" content="Turning Silicon Valley's leftovers into opportunities. Leftover VC collects and reinvests leftover capital from failed startups, legal settlements, and fraud recoveries." />
+    <link rel="canonical" href="https://danielmerja.github.io/leftover.github.io/" />
 
-    <!-- Google / Search Engine Tags -->
     <meta itemprop="name" content="Leftover VC - Reclaiming Failed Startup Capital" />
-    <meta itemprop="description" content="Turning Silicon Valley's leftovers into opportunities. We collect and reinvest leftover capital from failed startups, legal settlements, and fraud recoveries." />
-    <meta itemprop="image" content="/assets/images/logo.png" />
+    <meta itemprop="description" content="Turning Silicon Valley's leftovers into opportunities. Leftover VC collects and reinvests leftover capital from failed startups, legal settlements, and fraud recoveries." />
+    <meta itemprop="image" content="https://danielmerja.github.io/leftover.github.io/assets/images/logo.png" />
 
-    <!-- Facebook Meta Tags -->
-    <meta property="og:url" content="https://danielmerja.com/leftover.github.io/" />
+    <meta property="og:url" content="https://danielmerja.github.io/leftover.github.io/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Leftover VC - Reclaiming Failed Startup Capital" />
-    <meta property="og:description" content="Turning Silicon Valley's leftovers into opportunities. We collect and reinvest leftover capital from failed startups, legal settlements, and fraud recoveries." />
-    <meta property="og:image" content="/assets/images/logo.png" />
+    <meta property="og:description" content="A satirical premium fund for failed startup write-offs, legal settlement recoveries, and fraud-case leftovers." />
+    <meta property="og:image" content="https://danielmerja.github.io/leftover.github.io/assets/images/logo.png" />
 
-    <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Leftover VC - Reclaiming Failed Startup Capital" />
-    <meta name="twitter:description" content="Turning Silicon Valley's leftovers into opportunities. We collect and reinvest leftover capital from failed startups, legal settlements, and fraud recoveries." />
-    <meta name="twitter:image" content="/assets/images/logo.png" />
-    <meta name="twitter:image:alt" content="Leftover VC logo - Representing the reclamation and reinvestment of failed startup capital in Silicon Valley" />
+    <meta name="twitter:description" content="Turning Silicon Valley's leftovers into opportunities." />
+    <meta name="twitter:image" content="https://danielmerja.github.io/leftover.github.io/assets/images/logo.png" />
+    <meta name="twitter:image:alt" content="Leftover VC logo - representing the reclamation and reinvestment of failed startup capital in Silicon Valley" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        accent: '#00ff9d',
-                    }
-                }
-            }
-        }
-    </script>
+    <link rel="stylesheet" href="global.css" />
 </head>
-<body class="bg-black text-white min-h-screen">
-    <header class="py-20 text-center">
-        <h1 class="text-5xl font-bold text-accent mb-4">Leftover VC</h1>
-        <p class="text-gray-400 text-xl">Turning Silicon Valley's leftovers into opportunities</p>
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+        <nav class="nav-shell" aria-label="Primary navigation">
+            <a class="brand-mark" href="#" aria-label="Leftover VC home">
+                <img src="assets/images/logo.png" alt="" width="40" height="40" />
+                <span>Leftover VC</span>
+            </a>
+            <div class="nav-links" aria-label="Page sections">
+                <a href="#thesis">Thesis</a>
+                <a href="#process">Process</a>
+                <a href="#team">Team</a>
+            </div>
+        </nav>
+
+        <div class="hero">
+            <p class="eyebrow">Distressed alpha, unserious mandate</p>
+            <h1>Institutional-grade capital recycling for Silicon Valley's leftovers.</h1>
+            <p class="hero-copy">
+                Leftover VC collects the crumbs of collapsed cap tables, settlement recoveries,
+                and fraud-case loose change, then gives them the premium fund treatment they never asked for.
+            </p>
+            <div class="hero-actions" aria-label="Primary actions">
+                <a class="button button-primary" href="#process">Review allocation process</a>
+                <a class="button button-secondary" href="#thesis">Read the thesis</a>
+            </div>
+        </div>
     </header>
 
-    <div class="text-center mb-16">
-        <p class="text-gray-400 text-xl mb-2">Total Funding Raised</p>
-        <div class="text-5xl font-bold text-accent">
-            $<span id="funding-counter">0</span>
-        </div>
-    </div>
-
-    <main class="max-w-4xl mx-auto px-4">
-        <section id="thesis" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
-            <h2 class="text-3xl font-bold mb-6 text-accent">The Thesis</h2>
-            <p class="text-gray-300 mb-4">We collect and reinvest leftover capital from:</p>
-            <ul class="space-y-2 text-gray-400 list-disc pl-6">
-                <li>Failed startup write-offs</li>
-                <li>Legal settlement recoveries</li>
-                <li>Returned funds from fraud cases</li>
-            </ul>
-        </section>
-
-        <section id="process" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
-            <h2 class="text-3xl font-bold mb-6 text-accent">Investment Process</h2>
-            <div class="bg-gray-800 rounded-lg p-6 mb-8">
-                <div class="flex items-start space-x-4 mb-6">
-                    <input type="checkbox" id="accredited" class="mt-1.5 h-5 w-5 rounded border-gray-600 text-accent focus:ring-accent" required>
-                    <label for="accredited" class="text-gray-300">
-                        I hereby certify that I qualify as an Accredited Investor under SEC guidelines by meeting one or more of the 
-                        <a href="https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-investors" 
-                           target="_blank" 
-                           class="text-accent hover:underline">
-                           required qualifications →
-                        </a>
-                    </label>
-                </div>
+    <main id="main">
+        <section class="funding-panel reveal-section" aria-labelledby="funding-title">
+            <div>
+                <p class="section-kicker">Fund I commitments</p>
+                <h2 id="funding-title">Total Funding Raised</h2>
             </div>
-            
-            <div id="wallet-section" class="hidden">
-                <h3 class="text-2xl font-bold mb-4 text-center">Send funds to:</h3>
-                <div class="space-y-4">
-                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm text-gray-400 mb-2">Bitcoin (BTC)</p>
-                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp</code>
-                        </div>
-                        <button onclick="copyWallet(event)" 
-                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                            <span class="button-text">Copy</span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm text-gray-400 mb-2">Solana (SOL)</p>
-                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">3ZR8LgNMkDCVyPANxYTKZKrts4SW7wiN66fmJi9gGtj9</code>
-                        </div>
-                        <button onclick="copyWallet(event)" 
-                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                            <span class="button-text">Copy</span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm text-gray-400 mb-2">USDC (ERC-20)</p>
-                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">0x5EeD7EC4c1bC333be5495772Cab8B7ae2a2c8940</code>
-                        </div>
-                        <button onclick="copyWallet(event)" 
-                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                            <span class="button-text">Copy</span>
-                        </button>
-                    </div>
-                    <div class="bg-gray-800 p-6 rounded-lg flex items-center justify-between">
-                        <div class="flex-1">
-                            <p class="text-sm text-gray-400 mb-2">Ethereum (ETH)</p>
-                            <code class="wallet-address text-gray-300 font-mono block text-center select-all">0xAA60809C302D79a8D62A52FAaa087875ad06a01E</code>
-                        </div>
-                        <button onclick="copyWallet(event)" 
-                                class="ml-4 bg-accent text-black px-4 py-2 rounded-lg font-semibold hover:bg-accent/90 transition-colors">
-                            <span class="button-text">Copy</span>
-                        </button>
-                    </div>
-                </div>
+            <div class="funding-amount" aria-label="34 dollars and 20 cents">
+                $<span id="funding-counter">0.00</span>
             </div>
         </section>
 
-        <section id="team" class="mb-16 bg-gray-900 rounded-xl p-8 shadow-xl">
-            <h2 class="text-3xl font-bold mb-6 text-accent">Our Team</h2>
-            <div class="bg-gray-800 rounded-lg p-6 text-center">
-                <h3 class="text-2xl font-bold text-accent mb-2">Daniel Merja</h3>
-                <p class="text-gray-400">General Partner</p>
-                <a href="https://x.com/danielmerja" 
-                   target="_blank" 
-                   rel="noopener noreferrer" 
-                   class="inline-block mt-2 text-accent hover:underline">
-                    @danielmerja
-                </a>
+        <section id="thesis" class="content-section reveal-section" aria-labelledby="thesis-title">
+            <div class="section-heading">
+                <p class="section-kicker">The thesis</p>
+                <h2 id="thesis-title">Every write-off deserves a second chance at becoming a memo.</h2>
             </div>
+            <div class="thesis-grid">
+                <article class="feature-card">
+                    <span class="card-number">01</span>
+                    <h3>Failed startup write-offs</h3>
+                    <p>We identify abandoned ambition, repackage the downside, and call it a differentiated sourcing edge.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="card-number">02</span>
+                    <h3>Legal settlement recoveries</h3>
+                    <p>Cash that once lived in a footnote is promoted into a flagship vehicle with a tasteful dark mode.</p>
+                </article>
+                <article class="feature-card">
+                    <span class="card-number">03</span>
+                    <h3>Returned fraud-case funds</h3>
+                    <p>Recovered capital gets a clean cap table, a sharper deck, and one final opportunity to disappoint.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="process" class="content-section process-section reveal-section" aria-labelledby="process-title">
+            <div class="section-heading">
+                <p class="section-kicker">Investment process</p>
+                <h2 id="process-title">A highly selective gateway to a very small number.</h2>
+                <p>
+                    Certify your investor status to reveal allocation instructions. This ceremony is
+                    legally adjacent and emotionally important.
+                </p>
+            </div>
+
+            <div class="qualification-card">
+                <input type="checkbox" id="accredited" required />
+                <label for="accredited">
+                    I hereby certify that I qualify as an Accredited Investor under SEC guidelines by meeting one or more of the
+                    <a href="https://www.sec.gov/resources-small-businesses/capital-raising-building-blocks/accredited-investors"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        required qualifications
+                    </a>.
+                </label>
+            </div>
+
+            <div id="wallet-section" class="wallet-section hidden" aria-hidden="true">
+                <div class="wallet-heading">
+                    <p class="section-kicker">Allocation rails</p>
+                    <h3>Send funds to:</h3>
+                    <p id="copy-status" class="sr-only" aria-live="polite"></p>
+                </div>
+
+                <div class="wallet-grid">
+                    <article class="wallet-card">
+                        <div>
+                            <p class="wallet-label">Bitcoin (BTC)</p>
+                            <code class="wallet-address">3HTRGFmegqix7mhzAdU7bHUjTXioRdvafp</code>
+                        </div>
+                        <button class="copy-button" type="button" data-copy-wallet>
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </article>
+                    <article class="wallet-card">
+                        <div>
+                            <p class="wallet-label">Solana (SOL)</p>
+                            <code class="wallet-address">3ZR8LgNMkDCVyPANxYTKZKrts4SW7wiN66fmJi9gGtj9</code>
+                        </div>
+                        <button class="copy-button" type="button" data-copy-wallet>
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </article>
+                    <article class="wallet-card">
+                        <div>
+                            <p class="wallet-label">USDC (ERC-20)</p>
+                            <code class="wallet-address">0x5EeD7EC4c1bC333be5495772Cab8B7ae2a2c8940</code>
+                        </div>
+                        <button class="copy-button" type="button" data-copy-wallet>
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </article>
+                    <article class="wallet-card">
+                        <div>
+                            <p class="wallet-label">Ethereum (ETH)</p>
+                            <code class="wallet-address">0xAA60809C302D79a8D62A52FAaa087875ad06a01E</code>
+                        </div>
+                        <button class="copy-button" type="button" data-copy-wallet>
+                            <span class="button-text">Copy</span>
+                        </button>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="team" class="content-section team-section reveal-section" aria-labelledby="team-title">
+            <div class="section-heading">
+                <p class="section-kicker">Our team</p>
+                <h2 id="team-title">One partner. Infinite conviction. Limited AUM.</h2>
+            </div>
+            <article class="team-card">
+                <div class="team-avatar" aria-hidden="true">DM</div>
+                <div>
+                    <h3>Daniel Merja</h3>
+                    <p>General Partner</p>
+                    <a href="https://x.com/danielmerja" target="_blank" rel="noopener noreferrer">@danielmerja</a>
+                </div>
+            </article>
         </section>
     </main>
-    
-    <footer class="py-8 border-t border-gray-800 text-center">
-        <p class="text-gray-500 text-sm">
-            Legal Disclaimer: This is a parody site. Nothing here constitutes investment advice. 
-            All content is for entertainment purposes only. Don't invest money based on jokes from the internet.
+
+    <footer class="site-footer">
+        <p>
+            Legal Disclaimer: This is a parody site. Nothing here constitutes investment advice.
+            All content is for entertainment purposes only. Do not invest money based on jokes from the internet.
         </p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

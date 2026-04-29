@@ -1,1 +1,580 @@
-/* Custom styles can go here if needed beyond Tailwind */
+:root {
+    color-scheme: dark;
+    --bg: #050604;
+    --bg-soft: #0d120f;
+    --panel: rgba(13, 18, 15, 0.78);
+    --panel-strong: rgba(18, 26, 22, 0.94);
+    --text: #f4f0e8;
+    --muted: #a7b1a7;
+    --faint: #69766d;
+    --line: rgba(191, 255, 211, 0.16);
+    --accent: #00ff9d;
+    --accent-soft: rgba(0, 255, 157, 0.14);
+    --gold: #d7bd76;
+    --danger: #ff6f61;
+    --shadow: 0 28px 90px rgba(0, 0, 0, 0.48);
+    --radius-lg: 32px;
+    --radius-md: 22px;
+    --radius-sm: 14px;
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    color: var(--text);
+    background:
+        radial-gradient(circle at top left, rgba(0, 255, 157, 0.2), transparent 28rem),
+        radial-gradient(circle at 80% 10%, rgba(215, 189, 118, 0.13), transparent 24rem),
+        linear-gradient(135deg, #030403 0%, var(--bg) 44%, #0a0d0b 100%);
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+body::before {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: "";
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 74px 74px;
+    mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+a {
+    color: inherit;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 20;
+    transform: translateY(-160%);
+    border-radius: 999px;
+    background: var(--accent);
+    color: #02120b;
+    padding: 0.7rem 1rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 180ms ease;
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.site-header,
+main,
+.site-footer {
+    width: min(1120px, calc(100% - 32px));
+    margin-inline: auto;
+}
+
+.site-header {
+    padding: 28px 0 64px;
+}
+
+.nav-shell {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(5, 6, 4, 0.7);
+    padding: 10px 14px;
+    backdrop-filter: blur(20px);
+}
+
+.brand-mark,
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.brand-mark {
+    gap: 0.75rem;
+    color: var(--text);
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+
+.brand-mark img {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #000;
+}
+
+.nav-links {
+    gap: 0.3rem;
+}
+
+.nav-links a {
+    border-radius: 999px;
+    color: var(--muted);
+    padding: 0.65rem 0.9rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.82rem;
+    text-decoration: none;
+    transition: background 180ms ease, color 180ms ease;
+}
+
+.nav-links a:hover {
+    background: var(--accent-soft);
+    color: var(--text);
+}
+
+.hero {
+    position: relative;
+    margin-top: 72px;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background:
+        linear-gradient(135deg, rgba(0, 255, 157, 0.12), transparent 28%),
+        linear-gradient(160deg, rgba(255, 255, 255, 0.08), transparent 36%),
+        var(--panel);
+    padding: clamp(2rem, 7vw, 6.5rem);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.hero::after {
+    position: absolute;
+    right: -8rem;
+    bottom: -10rem;
+    width: 28rem;
+    height: 28rem;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    content: "";
+    background: radial-gradient(circle, rgba(0, 255, 157, 0.18), transparent 62%);
+}
+
+.eyebrow,
+.section-kicker,
+.wallet-label {
+    margin: 0;
+    color: var(--gold);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    position: relative;
+    z-index: 1;
+    max-width: 930px;
+    margin: 0.8rem 0 0;
+    font-size: clamp(3rem, 10vw, 7.8rem);
+    line-height: 0.86;
+    letter-spacing: -0.08em;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 690px;
+    margin: 1.6rem 0 0;
+    color: var(--muted);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(1.05rem, 2vw, 1.3rem);
+}
+
+.hero-actions {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 2rem;
+}
+
+.button,
+.copy-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    padding: 0.78rem 1.15rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 800;
+    text-decoration: none;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.button:hover,
+.copy-button:hover {
+    transform: translateY(-2px);
+}
+
+.button-primary,
+.copy-button {
+    background: var(--accent);
+    color: #03120c;
+}
+
+.button-secondary {
+    border-color: var(--line);
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+main {
+    display: grid;
+    gap: 24px;
+    padding-bottom: 56px;
+}
+
+.funding-panel,
+.content-section {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: var(--panel);
+    box-shadow: var(--shadow);
+}
+
+.funding-panel {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1.5rem;
+    align-items: end;
+    padding: clamp(1.5rem, 5vw, 3rem);
+}
+
+.funding-panel h2,
+.section-heading h2 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2rem, 5vw, 4rem);
+    line-height: 0.96;
+    letter-spacing: -0.05em;
+}
+
+.funding-amount {
+    color: var(--accent);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    line-height: 0.9;
+    text-shadow: 0 0 34px rgba(0, 255, 157, 0.28);
+}
+
+.content-section {
+    padding: clamp(1.4rem, 5vw, 3rem);
+}
+
+.section-heading {
+    max-width: 720px;
+    margin-bottom: 2rem;
+}
+
+.section-heading p:not(.section-kicker) {
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.thesis-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.feature-card,
+.qualification-card,
+.wallet-card,
+.team-card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    background: var(--panel-strong);
+}
+
+.feature-card {
+    min-height: 260px;
+    padding: 1.35rem;
+}
+
+.card-number {
+    color: var(--accent);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.8rem;
+    font-weight: 900;
+}
+
+.feature-card h3,
+.wallet-heading h3,
+.team-card h3 {
+    margin: 0.85rem 0 0;
+    font-size: 1.45rem;
+    line-height: 1.05;
+}
+
+.feature-card p,
+.team-card p {
+    color: var(--muted);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.process-section {
+    background:
+        linear-gradient(145deg, rgba(215, 189, 118, 0.09), transparent 36%),
+        var(--panel);
+}
+
+.qualification-card {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: start;
+    margin-bottom: 1.35rem;
+    padding: 1.2rem;
+}
+
+.qualification-card input {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.25rem;
+    accent-color: var(--accent);
+}
+
+.qualification-card label {
+    color: var(--muted);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.qualification-card a,
+.team-card a {
+    color: var(--accent);
+    font-weight: 800;
+    text-decoration-color: rgba(0, 255, 157, 0.35);
+    text-underline-offset: 0.18em;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.wallet-section {
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    background: rgba(0, 0, 0, 0.22);
+    padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.wallet-heading {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.wallet-heading h3 {
+    margin: 0;
+}
+
+.wallet-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.wallet-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+}
+
+.wallet-address {
+    display: block;
+    margin-top: 0.35rem;
+    color: var(--text);
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+    font-size: 0.92rem;
+    overflow-wrap: anywhere;
+    user-select: all;
+}
+
+.copy-button {
+    border: 0;
+    cursor: pointer;
+}
+
+.copy-button.is-copied {
+    background: var(--gold);
+}
+
+.team-card {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    max-width: 520px;
+    padding: 1.2rem;
+}
+
+.team-avatar {
+    display: grid;
+    flex: 0 0 72px;
+    width: 72px;
+    height: 72px;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: #03120c;
+    background: linear-gradient(135deg, var(--accent), var(--gold));
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 900;
+}
+
+.team-card h3,
+.team-card p {
+    margin: 0;
+}
+
+.team-card a {
+    display: inline-block;
+    margin-top: 0.35rem;
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.site-footer {
+    border-top: 1px solid var(--line);
+    padding: 28px 0 44px;
+}
+
+.site-footer p {
+    max-width: 720px;
+    margin: 0;
+    color: var(--faint);
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 0.9rem;
+}
+
+.reveal-section {
+    transform: translateY(18px);
+    opacity: 0;
+    transition: opacity 680ms ease, transform 680ms ease;
+}
+
+.reveal-section.is-visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@media (max-width: 820px) {
+    .nav-shell,
+    .funding-panel {
+        align-items: start;
+        border-radius: var(--radius-md);
+    }
+
+    .nav-shell,
+    .funding-panel,
+    .team-card {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .hero {
+        margin-top: 36px;
+    }
+
+    .thesis-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    .site-header,
+    main,
+    .site-footer {
+        width: min(100% - 20px, 1120px);
+    }
+
+    .nav-links a {
+        padding-inline: 0.55rem;
+    }
+
+    .wallet-card {
+        grid-template-columns: 1fr;
+    }
+
+    .copy-button,
+    .button {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+
+    .reveal-section {
+        transform: none;
+        opacity: 1;
+    }
+}
